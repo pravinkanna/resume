@@ -1,0 +1,126 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{PRAVINKANNA PARTHIBAN}
+\newcommand{\yourRole}{Senior Software Engineer}
+% How you want it to show up on the resume
+% \newcommand{\yourWebsite}{website.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+\newcommand{\yourWebsiteLink}{https://website.com}
+\newcommand{\yourEmail}{pravinkannap@gmail.com}
+\newcommand{\yourPhone}{+919843638308}
+\newcommand{\githubUserName}{pravinkanna}
+\newcommand{\linkedInUserName}{pravinkanna}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \LARGE {\yourRole} \\ \vspace{6pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone $|$ 
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} $|$ 
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedin/\linkedInUserName}}
+    
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+   \doubleItem{Languages \& Frameworks:}{Golang, Node.js, TypeScript/JavaScript, Python, NestJS, Express.js}%
+   {}{}%
+    \\
+    \doubleItem{Database \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Kafka, RabbitMQ}%
+    {}{}%
+    \\
+    \doubleItem{Tools:}{GCP, Docker, Kubernetes, GitHub Actions, Prometheus, Grafana, Sentry, Git, Postman, IMAP}%
+    {}{}%
+\end{skillList}
+
+\sectionsep
+
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+\resumeHeading{Vumonic Datalabs}{Senior Software Engineer}{Bengaluru, India}{Jan 2021 – Present}
+\begin{bullets}
+    \item Led the engineering team of 3 members by directly managing frontend and DevOps engineers while reporting to the CEO and establishing engineering standards across the organization.
+    \item Designed and implemented a email monitoring system for 3 million users, reducing processing delay from 8 hours to zero by utilizing the IMAP IDLE protocol to maintain persistent TCP connections for real-time email updates.
+    \item Led the successful migration of 80 TiB storage, 30 services, and 5 databases from Oracle Cloud to GCP with zero downtime, using open-source tools like Rclone for data transfer.
+    \item Reduced production errors by 70\% by migrating legacy Node.js v10 services to Go 1.23, implementing strict type checking, comprehensive error handling, and Sentry monitoring for automated error tracking and alerts
+    \item Architected and built new SaaS product called Inboox.AI in 5 months, implementing subscription management, OAuth2 authentication, text search engine, and automated billing using Golang, Node.js, Typesense, and Stripe.
+    \item Reduced deployment time by more than 90\% and eliminated manual interventions by implementing Docker containerization and Kubernetes automation for 30+ microservices.
+    \item Achieved zero developer dependency for marketing reports by developing a self-service KPI dashboard that automated report generation.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{PretVA}{Fullstack Developer Intern}{Remote}{Oct 2020 - Dec 2020}
+\begin{bullets}
+    \item Improved user communication efficiency by developing a real-time chat system using WebSocket, facilitating seamless interactions between buyers and suppliers.
+    \item Enhanced user experience and design consistency by revamping the web application, adhering to provided prototypes and UX guidelines.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{T4TEQ Software Solutions}{Tutor}{Tamil Nadu, India}{Jan 2020 - Aug 2020}
+\begin{bullets}
+    \item Taught programming fundamentals to 50+ students with a 95\% course completion rate, covering Python, data structures, and basic algorithms.
+\end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{Projects \& Hackathons}
+
+\projectHeading{Codeaholic}{https://github.com/Pravinkanna/codeaholic-v2}{React, Node.js, ExpressJS, MongoDB, Redis}
+ An online IDE for writing, running, and sharing code, using an open-source code executor to run code securely within Docker containers. This resulted in 300+ weekly page views and 500+ code submissions.
+\sectionsep
+
+\projectHeading{Horsey}{https://devfolio.co/projects/horsey-find-the-best-rewards-on-web-c09f}{React, Node.js, ExpressJS, Solidity}
+A web3 app built during the ETHIndia 2022 Hackathon to enable protocols to distribute rewards, such as airdrops and allowlists, to targeted user groups that completed proof-of-humanity verification via Worldcoin.
+\sectionsep
+  
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Tamil Nadu, India}{Jun 2021} \\
+\courseWork{Data Structures and Algorithms, Object Oriented System Design, Operating Systems, Database Design, Database-Driven Web Design, Software Engineering, and Computer Networking.}
+\sectionsep
+
+\end{document}
