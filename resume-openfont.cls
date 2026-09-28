@@ -26,8 +26,11 @@
 % Used for the link symbol
 \RequirePackage{fontawesome}
 % Set up font 
-\RequirePackage{lato-font}
-\RequirePackage{raleway-font}
+\RequirePackage{fontspec}
+\RequirePackage{font-color}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Color=primary]{Arial}
+\setsansfont{Arial}
 % make underlying constants: credits to Alex Beattie for noticing and suggesting fix
 \RequirePackage{ulem}
 %--------------------------------------------------------------
@@ -37,7 +40,6 @@
 \titleformat{\section}{%
 \color{headings}% Using comments to allow us to split the command across multiple line
 \scshape%
-\customLatoLight%
 \fontsize{16pt}{24pt}%first number is size, second number is space between lines
 \selectfont%
 \raggedright%
@@ -48,7 +50,6 @@
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titleformat{\subsection}{%
 \color{subheadings}%
-\customLatoBlack%
 \fontsize{12pt}{12pt}%
 \selectfont%
 \bfseries%
@@ -83,7 +84,6 @@
 % Subheadings command - create different types of heading
 \newcommand{\runsubsection}[1]{%
 \color{subheadings}%
-\customLatoBlack%
 \fontsize{12pt}{12pt}%
 \selectfont%
 \bfseries%
@@ -95,7 +95,6 @@
 \color{subheadings}%
 \raggedright%
 \scshape%
-\customRalewayMedium%
 \fontsize{11pt}{13pt}%
 \selectfont{#1}%
 \normalfont}
@@ -104,7 +103,6 @@
 \newcommand{\location}[1]{%
 \color{headings}%
 \raggedright%
-\customRalewayMedium%
 \fontsize{11pt}{13pt}%
 \selectfont{#1}%
 \normalfont}
@@ -114,7 +112,6 @@
 \color{subheadings}%
 \raggedright%
 \scshape%
-\customRalewayMedium%
 \fontsize{11pt}{12pt}%
 \selectfont{#1}%
 \normalfont}
