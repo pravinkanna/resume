@@ -33,13 +33,13 @@
 %     Profile
 %--------------------------------------------------------------
 \newcommand{\yourName}{PRAVINKANNA PARTHIBAN}
-\newcommand{\yourRole}{Senior Software Engineer}
+\newcommand{\yourRole}{Senior Backend Engineer}
 % How you want it to show up on the resume
 % \newcommand{\yourWebsite}{website.com}
 % vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
 \newcommand{\yourWebsiteLink}{https://website.com}
 \newcommand{\yourEmail}{pravinkannap@gmail.com}
-\newcommand{\yourPhone}{+919843638308}
+\newcommand{\yourPhone}{+91 9843638308 }
 \newcommand{\githubUserName}{pravinkanna}
 \newcommand{\linkedInUserName}{pravinkanna}
 
@@ -54,73 +54,62 @@
 \end{center}
 
 %--------------------------------------------------------------
+%     Summary
+%--------------------------------------------------------------
+\section{Summary}
+Backend Engineer with 5+ years of experience architecting distributed systems and microservices that serve millions of users and process billions of records. Specializes in improving reliability and security while reducing operational costs by simplifying architecture. Proficient across Go, Node.js, GCP, AWS, Docker, Kubernetes, PostgreSQL, and MongoDB.
+\sectionsep
+
+%--------------------------------------------------------------
 %     Skills
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-   \doubleItem{Languages \& Frameworks:}{Golang, Node.js, TypeScript/JavaScript, Python, NestJS, Express.js}%
+   \doubleItem{Languages:}{Go (Golang), TypeScript/JavaScript (Node.js), Python, SQL}%
    {}{}%
     \\
-    \doubleItem{Database \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Kafka, RabbitMQ}%
+    \doubleItem{Databases \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Firestore, Kafka, RabbitMQ}%
     {}{}%
     \\
-    \doubleItem{Tools:}{GCP, Docker, Kubernetes, GitHub Actions, Prometheus, Grafana, Sentry, Git, Postman, IMAP}%
+    \doubleItem{Cloud \& DevOps:}{GCP, AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Prometheus, Grafana }%
     {}{}%
 \end{skillList}
-
 \sectionsep
-
 
 %--------------------------------------------------------------
 %     Experience
 %--------------------------------------------------------------
 \section{Work Experience}
-\resumeHeading{Vumonic Datalabs}{Senior Software Engineer}{Bengaluru, India}{Jan 2021 – Present}
+\resumeHeading{Zobaze Technologies}{Backend Developer}{Hyderabad, India}{Jun 2025 - Aug 2026}
 \begin{bullets}
-    \item Led the engineering team of 3 members by directly managing frontend and DevOps engineers while reporting to the CEO and establishing engineering standards across the organization.
-    \item Designed and implemented a email monitoring system for 3 million users, reducing processing delay from 8 hours to zero by utilizing the IMAP IDLE protocol to maintain persistent TCP connections for real-time email updates.
-    \item Led the successful migration of 80 TiB storage, 30 services, and 5 databases from Oracle Cloud to GCP with zero downtime, using open-source tools like Rclone for data transfer.
-    \item Reduced production errors by 70\% by migrating legacy Node.js v10 services to Go 1.23, implementing strict type checking, comprehensive error handling, and Sentry monitoring for automated error tracking and alerts
-    \item Architected and built new SaaS product called Inboox.AI in 5 months, implementing subscription management, OAuth2 authentication, text search engine, and automated billing using Golang, Node.js, Typesense, and Stripe.
-    \item Reduced deployment time by more than 90\% and eliminated manual interventions by implementing Docker containerization and Kubernetes automation for 30+ microservices.
-    \item Achieved zero developer dependency for marketing reports by developing a self-service KPI dashboard that automated report generation.
+    \item Sole owner of the backend and GCP cloud infrastructure for a product serving 2M users, reporting directly to the CEO and setting technical direction across the stack.
+    \item Improved stock accuracy from 85\% to 99\% across 1.5M businesses by redesigning the offline inventory system as an append-only transaction ledger, eliminating sync conflicts and retiring the reconciliation service.
+    \item Rebuilt subscription activation as a server-authoritative flow driven by payment-provider webhooks in Node.js, resolving activation failures and duplicate-subscription conflicts that affected 15\% of paid accounts.
+    \item  Built a Firestore-to-BigQuery archival pipeline in Golang for 700M+ sales and activity records, tiering data older than 3 months and reducing Firestore costs by \textasciitilde 20\%.
+    \item Developed an in-house push-notification and engagement platform in Golang processing 100K events/day across 1.5M businesses, replacing NudgeNow and removing recurring vendor licensing costs.
+    \item Led a GCP security overhaul across 13 projects: eliminated all long-lived service-account keys via keyless auth, restricted every API key to app-only usage, and shut down unauthenticated legacy services.
+    \item Built a Claude Code plugin that persists tasks, meetings, decisions, research, and blockers as a searchable knowledge base --- now the default daily workflow for the entire 12-person company.
+    
 \end{bullets}
 \sectionsep
 
-\resumeHeading{PretVA}{Fullstack Developer Intern}{Remote}{Oct 2020 - Dec 2020}
+\resumeHeading{Vumonic Datalabs}{Software Engineer}{Bengaluru, India}{Jun 2021 - May 2025}
 \begin{bullets}
-    \item Improved user communication efficiency by developing a real-time chat system using WebSocket, facilitating seamless interactions between buyers and suppliers.
-    \item Enhanced user experience and design consistency by revamping the web application, adhering to provided prototypes and UX guidelines.
+    \item Built a real-time email ingestion system in Golang maintaining 1M concurrent IMAP IDLE connections (\textasciitilde 30K per node), reducing new-mail fetch latency from 8 hours to under 1 minute.
+    \item Productized the company's email dataset as Inboox.ai, a live SaaS for email marketers: built REST APIs, ingestion pipelines, search over 1.5M+ emails from 10K+ brands, and subscription management using Golang and Node.js.
+    \item Rewrote Node.js services in Golang, improving throughput by 40\% through concurrent processing and eliminating a class of runtime type errors with typed contracts.
+    \item Led a zero-downtime migration of 80 TB of storage, 30 Kubernetes services, and 5 databases from AWS to GCP through phased cutovers.
+    \item Migrated managed MongoDB and Elasticsearch (8B+ records, 3M users) from Atlas and Elastic Cloud to self-hosted deployments with automated backups, cutting database costs by \textasciitilde 70\%.
+    \item Automated Docker builds and Kubernetes deployments with GitHub Actions across 30+ microservices, replacing fully manual releases with push-to-deploy pipelines.
 \end{bullets}
 \sectionsep
-
-\resumeHeading{T4TEQ Software Solutions}{Tutor}{Tamil Nadu, India}{Jan 2020 - Aug 2020}
-\begin{bullets}
-    \item Taught programming fundamentals to 50+ students with a 95\% course completion rate, covering Python, data structures, and basic algorithms.
-\end{bullets}
-\sectionsep
-
-%--------------------------------------------------------------
-%     Projects
-%--------------------------------------------------------------
-\section{Projects \& Hackathons}
-
-\projectHeading{Codeaholic}{https://github.com/Pravinkanna/codeaholic-v2}{React, Node.js, ExpressJS, MongoDB, Redis}
- An online IDE for writing, running, and sharing code, using an open-source code executor to run code securely within Docker containers. This resulted in 300+ weekly page views and 500+ code submissions.
-\sectionsep
-
-\projectHeading{Horsey}{https://devfolio.co/projects/horsey-find-the-best-rewards-on-web-c09f}{React, Node.js, ExpressJS, Solidity}
-A web3 app built during the ETHIndia 2022 Hackathon to enable protocols to distribute rewards, such as airdrops and allowlists, to targeted user groups that completed proof-of-humanity verification via Worldcoin.
-\sectionsep
-  
 
 %--------------------------------------------------------------
 %     Education
 %--------------------------------------------------------------
 \section{Education}
 % Put school first and degree second if your school is reputable
-\educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Tamil Nadu, India}{Jun 2021} \\
-\courseWork{Data Structures and Algorithms, Object Oriented System Design, Operating Systems, Database Design, Database-Driven Web Design, Software Engineering, and Computer Networking.}
+\educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Trichy, India}{Jun 2018 - May 2021}
 \sectionsep
 
 \end{document}
