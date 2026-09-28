@@ -1,7 +1,6 @@
 % Intro Options
 \ProvidesClass{resume-openfont}[2021/05/30 Abdullah's version]
 \NeedsTeXFormat{LaTeX2e}
-\DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
     \PassOptionsToClass{\CurrentOption}{article}
 }
@@ -21,10 +20,6 @@
 \RequirePackage{titlesec}
 % For skills table
 \RequirePackage{enumitem}
-% Using tables like the profile section
-\RequirePackage{tabularx}
-% Used for the link symbol
-\RequirePackage{fontawesome}
 % Set up font 
 \RequirePackage{fontspec}
 \RequirePackage{font-color}
@@ -46,17 +41,6 @@
 \uppercase%
 } {}{0em}{}
 
-% subsection
-\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-\titleformat{\subsection}{%
-\color{subheadings}%
-\fontsize{12pt}{12pt}%
-\selectfont%
-\bfseries%
-\uppercase%
-\normalfont% Normal font is used to reset the customization, so it doesn't bleed into anything else
-} {}{0em}{}
-
 % remove header footer stuff like page numbers 
 \newcommand{\resetHeaderAndFooter}{%
 \fancyhf{}%
@@ -67,18 +51,8 @@
 %--------------------------------------------------------------
 % Formatting commands - commands to control spacing
 
-% A shortcut to control spacing
-\newcommand{\NoSpace}{\vspace*{-2pt}}
-
 % Command to simulate new line, to fix spacing glitches
 \newcommand{\fakeNewLine}{\newline \vspace{-\baselineskip}}
-
-% Command to align table at the start of the resume
-\newcommand{\alignProfileTable}{
-    \raggedbottom
-    \raggedright
-    \setlength{\tabcolsep}{0in}
-}
 
 %--------------------------------------------------------------
 % Subheadings command - create different types of heading
@@ -106,28 +80,6 @@
 \fontsize{11pt}{13pt}%
 \selectfont{#1}%
 \normalfont}
-
-% Minor command - like even smaller sub section
-\newcommand{\minorSection}[1]{%
-\color{subheadings}%
-\raggedright%
-\scshape%
-\fontsize{11pt}{12pt}%
-\selectfont{#1}%
-\normalfont}
-
-% Project command
-\newcommand{\Project}[2]{
-\runsubsection{%
-\href{#2}{\uppercase{#1} \,\faExternalLink}
-}
-    \hfill
-}
-
-% Underlined link command
-\newcommand{\underlinedLink}[2]{%
-\href{#1}{\uline{#2}}%
-}
 
 % Command for table 
 \newcommand{\singleItem}[2]{\normalsize{\textbf{#1} #2}}
