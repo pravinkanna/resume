@@ -10,8 +10,6 @@
 %--------------------------------------------------------------
 % Package Imports
 \RequirePackage[english]{babel}
-% page setup 
-\RequirePackage{fancyhdr}
 % Set boundaries
 \RequirePackage[hmargin=1cm, vmargin=0.94cm]{geometry}
 % remove ugly boxes around links
@@ -41,13 +39,6 @@
 \uppercase%
 } {}{0em}{}
 
-% remove header footer stuff like page numbers 
-\newcommand{\resetHeaderAndFooter}{%
-\fancyhf{}%
-\fancyfoot{}%
-\renewcommand{\headrulewidth}{0pt}%
-\renewcommand{\footrulewidth}{0pt}%
-}
 %--------------------------------------------------------------
 % Formatting commands - commands to control spacing
 
@@ -81,7 +72,7 @@
 \selectfont{#1}%
 \normalfont}
 
-% Command for table 
+% Command for table
 \newcommand{\singleItem}[2]{\normalsize{\textbf{#1} #2}}
 \newcommand{\doubleItem}[4]{\singleItem{#1}{#2}{\vspace{2pt}} & \singleItem{#3}{#4}}
 
