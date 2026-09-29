@@ -24,6 +24,8 @@
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Color=primary]{Arial}
 \setsansfont{Arial}
+% lighter font for paragraph text
+\newfontfamily\bodyfont[Color=body]{Arial}
 % make underlying constants: credits to Alex Beattie for noticing and suggesting fix
 \RequirePackage{ulem}
 %--------------------------------------------------------------
@@ -72,8 +74,11 @@
 \selectfont{#1}%
 \normalfont}
 
+% Hidden text command - zero width and white, readable by ATS parsers but not seen on the page
+\newcommand{\hiddenText}[1]{\makebox[0pt][r]{\addfontfeatures{Color=FFFFFF}#1}}
+
 % Command for table
-\newcommand{\singleItem}[2]{\normalsize{\textbf{#1} #2}}
+\newcommand{\singleItem}[2]{\normalsize{\textbf{#1} {\bodyfont #2}}}
 \newcommand{\doubleItem}[4]{\singleItem{#1}{#2}{\vspace{2pt}} & \singleItem{#3}{#4}}
 
 %--------------------------------------------------------------
@@ -84,6 +89,7 @@
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
 \vspace{-1mm}
+\bodyfont
 \begin{itemize}
 \itemsep1pt 
 \parskip1.5pt 

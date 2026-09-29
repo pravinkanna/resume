@@ -6,10 +6,10 @@
 % Convenience command - make it easy to fill template
 
 % Create job position command. Parameters: company, position, location, when
-\newcommand{\resumeHeading}[4]{\runsubsection{#1}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+\newcommand{\resumeHeading}[4]{\runsubsection{#1}\descript{ | #2}\hfill\hiddenText{| }\location{#3 | #4}\fakeNewLine}
 
 % Create education heading. Parameters: degree, school, location, when
-\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}\hiddenText{| }\location{#3 | #4}\\
 \descript{#2}\fakeNewLine}
 
 %--------------------------------------------------------------
@@ -24,14 +24,15 @@
     \small \href{mailto:pravinkannap@gmail.com}{\underline{pravinkannap@gmail.com}} |
     \small +919843638308 |
     \href{https://github.com/pravinkanna}{\underline{github.com/pravinkanna}} |
-    \href{https://www.linkedin.com/in/pravinkanna}{\underline{linkedin.com/in/pravinkanna}}
+    \href{https://www.linkedin.com/in/pravinkanna}{\underline{linkedin.com/in/pravinkanna}} |
+    Bangalore, India
 \end{center}
 
 %--------------------------------------------------------------
 %     Summary
 %--------------------------------------------------------------
 \section{Summary}
-Backend Engineer with 5+ years of experience architecting distributed systems and microservices that serve millions of users and process billions of records. Specializes in improving reliability and security while reducing operational costs by simplifying architecture. Proficient across Go, Node.js, GCP, AWS, Docker, Kubernetes, PostgreSQL, and MongoDB.
+{\bodyfont Backend Engineer with 5+ years of experience architecting distributed systems and microservices that serve millions of users and process billions of records. Specializes in improving reliability and security while reducing operational costs by simplifying architecture. Proficient across Go, Node.js, GCP, AWS, Docker, Kubernetes, PostgreSQL, and MongoDB.\par}
 \sectionsep
 
 %--------------------------------------------------------------
