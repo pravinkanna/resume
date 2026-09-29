@@ -10,7 +10,7 @@
 
 % Create education heading. Parameters: degree, school, location, when
 \newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}\hiddenText{| }\location{#3 | #4}\\
-\descript{#2}\fakeNewLine}
+\descript{#2}\par}
 
 %--------------------------------------------------------------
 \begin{document}
@@ -18,15 +18,17 @@
 %--------------------------------------------------------------
 %     Profile
 %--------------------------------------------------------------
-\begin{center}
+{\centering
     \Huge Pravinkanna Parthiban \\ \vspace{1pt}
     \LARGE Senior Backend Engineer \\ \vspace{6pt}
+    \small Bengaluru |
     \small \href{mailto:pravinkannap@gmail.com}{\underline{pravinkannap@gmail.com}} |
     \small +919843638308 |
     \href{https://github.com/pravinkanna}{\underline{github.com/pravinkanna}} |
-    \href{https://www.linkedin.com/in/pravinkanna}{\underline{linkedin.com/in/pravinkanna}} |
-    Bengaluru, India
-\end{center}
+    \href{https://www.linkedin.com/in/pravinkanna}{\underline{linkedin.com/in/pravinkanna}}
+
+\par}
+\sectionsep
 
 %--------------------------------------------------------------
 %     Summary
@@ -39,7 +41,7 @@
 %     Experience
 %--------------------------------------------------------------
 \section{Work Experience}
-\resumeHeading{Zobaze Technologies}{Backend Developer}{Hyderabad, India}{June 2025 -- August 2026}
+\resumeHeading{Zobaze Technologies}{Backend Developer}{Hyderabad}{June 2025 -- August 2026}
 \begin{bullets}
     \item Solely owned the backend and GCP cloud infrastructure for a product serving 2M users, reporting directly to the CEO and setting technical direction across the stack.
     \item Improved stock accuracy from 85\% to 99\% across 1.5M businesses by redesigning the offline inventory system as an append-only transaction ledger, eliminating sync conflicts and retiring the reconciliation service.
@@ -51,7 +53,7 @@
 \end{bullets}
 \sectionsep
 
-\resumeHeading{Vumonic Datalabs}{Software Engineer}{Bengaluru, India}{June 2021 -- May 2025}
+\resumeHeading{Vumonic Datalabs}{Software Engineer}{Bengaluru}{June 2021 -- May 2025}
 \begin{bullets}
     \item Cut new-mail fetch latency from 8 hours to under 1 minute by building a real-time email ingestion system in Golang that maintains 1M concurrent IMAP IDLE connections (\textasciitilde 30K per node).
     \item Led a zero-downtime migration of 80 TB of storage, 30 Kubernetes services, and 5 databases from AWS to GCP through phased cutovers.
@@ -67,14 +69,9 @@
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-   \doubleItem{Languages:}{Go (Golang), TypeScript/JavaScript (Node.js), Python, SQL}%
-   {}{}%
-    \\
-    \doubleItem{Databases \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Firestore, BigQuery, Kafka, RabbitMQ}%
-    {}{}%
-    \\
-    \doubleItem{Cloud \& DevOps:}{GCP, AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Prometheus, Grafana }%
-    {}{}%
+    \skillItem{Languages:}{Go (Golang), TypeScript/JavaScript (Node.js), Python, SQL}
+    \skillItem{Databases \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Firestore, BigQuery, Kafka, RabbitMQ}
+    \skillItem{Cloud \& DevOps:}{GCP, AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Prometheus, Grafana}
 \end{skillList}
 \sectionsep
 
@@ -84,6 +81,5 @@
 \section{Education}
 % Put school first and degree second if your school is reputable
 \educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Trichy, India}{2018 -- 2021}
-\sectionsep
 
 \end{document}
