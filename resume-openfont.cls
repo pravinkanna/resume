@@ -11,7 +11,7 @@
 % Package Imports
 \RequirePackage[english]{babel}
 % Set boundaries
-\RequirePackage[hmargin=1cm, vmargin=0.94cm]{geometry}
+\RequirePackage[margin=1cm]{geometry}
 % remove ugly boxes around links
 \usepackage[hidelinks]{hyperref}
 % setup custom titles
@@ -26,6 +26,9 @@
 \setsansfont{Arial}
 % lighter font for paragraph text
 \newfontfamily\bodyfont[Color=body]{Arial}
+% one body size everywhere below the header: 11pt on 13pt leading
+\renewcommand{\normalsize}{\@setfontsize\normalsize{11}{13}}
+\AtBeginDocument{\normalsize}
 % make underlying constants: credits to Alex Beattie for noticing and suggesting fix
 \RequirePackage{ulem}
 %--------------------------------------------------------------
@@ -49,62 +52,52 @@
 
 %--------------------------------------------------------------
 % Subheadings command - create different types of heading
-\newcommand{\runsubsection}[1]{%
+\newcommand{\runsubsection}[1]{{%
 \color{subheadings}%
 \fontsize{12pt}{12pt}%
 \selectfont%
 \bfseries%
-#1%
-\normalfont}%
+#1}}%
 
 % Descriptors command
-\newcommand{\descript}[1]{%
+\newcommand{\descript}[1]{{%
 \color{subheadings}%
-\raggedright%
 \scshape%
 \fontsize{11pt}{13pt}%
-\selectfont{#1}%
-\normalfont}
+\selectfont#1}}
 
 % Location command
-\newcommand{\location}[1]{%
+\newcommand{\location}[1]{{%
 \color{headings}%
-\raggedright%
 \fontsize{11pt}{13pt}%
-\selectfont{#1}%
-\normalfont}
+\selectfont#1}}
 
 % Hidden text command - zero width and white, readable by ATS parsers but not seen on the page
 \newcommand{\hiddenText}[1]{\makebox[0pt][r]{\addfontfeatures{Color=FFFFFF}#1}}
 
-% Command for table
-\newcommand{\singleItem}[2]{\normalsize{\textbf{#1} {\bodyfont #2}}}
-\newcommand{\doubleItem}[4]{\singleItem{#1}{#2}{\vspace{2pt}} & \singleItem{#3}{#4}}
+% Skill line: bold label followed by the list of skills
+\newcommand{\skillItem}[2]{\item \textbf{#1} {\bodyfont #2}}
 
 %--------------------------------------------------------------
 % Section separators command
-\newcommand{\sectionsep}[0]{\vspace{7pt}}
+\newcommand{\sectionsep}[0]{\vspace{6pt}}
 
 %--------------------------------------------------------------
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
 \vspace{-1mm}
 \bodyfont
-\begin{itemize}
-\itemsep1pt 
-\parskip1.5pt 
-\parsep1.5pt
+\begin{itemize}[topsep=8pt, partopsep=0pt, itemsep=1pt, parsep=1.5pt]
 }{
 \end{itemize}
-\vspace{-\topsep}
+\vspace{-8pt}
 }
 
-% Command for skill table
+% Skills list: one category per line, spaced like the bullet items
 \newenvironment{skillList}{%
-\noindent%
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+\begin{itemize}[label={}, leftmargin=0pt, labelwidth=0pt, labelsep=0pt, topsep=0pt, partopsep=0pt, itemsep=1pt, parsep=1.5pt]%
 }{%
-\end{tabular*}%
+\end{itemize}%
 }
 
 %--------------------------------------------------------------

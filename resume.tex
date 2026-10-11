@@ -10,7 +10,7 @@
 
 % Create education heading. Parameters: degree, school, location, when
 \newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}\hiddenText{| }\location{#3 | #4}\\
-\descript{#2}\fakeNewLine}
+\descript{#2}\par}
 
 %--------------------------------------------------------------
 \begin{document}
@@ -18,21 +18,50 @@
 %--------------------------------------------------------------
 %     Profile
 %--------------------------------------------------------------
-\begin{center}
+{\centering
     \Huge Pravinkanna Parthiban \\ \vspace{1pt}
     \LARGE Senior Backend Engineer \\ \vspace{6pt}
     \small \href{mailto:pravinkannap@gmail.com}{\underline{pravinkannap@gmail.com}} |
     \small +919843638308 |
     \href{https://github.com/pravinkanna}{\underline{github.com/pravinkanna}} |
     \href{https://www.linkedin.com/in/pravinkanna}{\underline{linkedin.com/in/pravinkanna}} |
-    Bangalore, India
-\end{center}
+    Bengaluru, India
+
+\par}
+\sectionsep
 
 %--------------------------------------------------------------
 %     Summary
 %--------------------------------------------------------------
 \section{Summary}
-{\bodyfont Backend Engineer with 5+ years of experience architecting distributed systems and microservices that serve millions of users and process billions of records. Specializes in improving reliability and security while reducing operational costs by simplifying architecture. Proficient across Go, Node.js, GCP, AWS, Docker, Kubernetes, PostgreSQL, and MongoDB.\par}
+{\bodyfont Backend engineer with 5+ years of experience building distributed systems and microservices in Go and Node.js on GCP and AWS. Most recently owned backend and cloud infrastructure for a product with 2M users. Previously scaled email ingestion to 1M concurrent IMAP connections, led a migration from AWS to GCP with zero downtime, and cut database costs by~\textasciitilde 70\%.\par}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+\resumeHeading{Zobaze Technologies}{Backend Developer}{Hyderabad}{June 2025 -- August 2026}
+\begin{bullets}
+    \item Owned the backend and GCP cloud infrastructure for a product serving 2M users, reporting directly to the CEO and setting technical direction across the stack.
+    \item Improved stock accuracy from 85\% to 99\% across 2M businesses by redesigning the offline inventory system as an append-only transaction ledger, eliminating sync conflicts and retiring the reconciliation service.
+    \item Resolved activation failures and duplicate subscriptions affecting 15\% of paid accounts by moving subscription activation from the app to a Node.js service driven by payment webhooks.
+    \item Lowered Firestore costs by \textasciitilde 20\% by building a Golang archival pipeline for 700M+ sales and activity records that tiers data older than 3 months into BigQuery.
+    \item Replaced an external vendor (NudgeNow) with an internal push notification and engagement platform built in Golang, processing 100K events/day across 2M businesses and eliminating recurring licensing costs.
+    \item Led a GCP security overhaul across 13 projects: replaced all service account keys with keyless authentication, restricted every API key to approved apps, and shut down unauthenticated legacy services.
+    \item Built an internal Claude Code plugin that captures tasks, meetings, decisions, research, and blockers in a searchable knowledge base, reaching 100\% adoption across the company as the default daily workflow.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Vumonic Datalabs}{Software Engineer}{Bengaluru}{July 2021 -- May 2025}
+\begin{bullets}
+    \item Cut the delay in fetching new emails from 8 hours to under 1 minute by building a real-time email ingestion system in Golang that maintains 1M concurrent IMAP IDLE connections (\textasciitilde 30K per node).
+    \item Led the migration of 80 TB of storage, 30 Kubernetes services, and 5 databases from AWS to GCP with zero downtime through phased cutovers.
+    \item Reduced database costs by \textasciitilde 70\% by migrating MongoDB and Elasticsearch (8B+ records, 3M users) from Atlas and Elastic Cloud to self-hosted deployments with automated backups.
+    \item Improved throughput by 40\% by rewriting Node.js services in Golang with concurrent processing, and eliminated a class of runtime type errors through typed contracts.
+    \item Productized the company's email dataset as Inboox.ai, a live SaaS for email marketers: built REST APIs, ingestion pipelines, search over 2M+ promotional emails from 10K brands, and subscription management using Golang and Node.js.
+    \item Automated Docker builds and Kubernetes deployments with GitHub Actions across 30+ microservices, replacing fully manual releases with pipelines that deploy on every push.
+\end{bullets}
 \sectionsep
 
 %--------------------------------------------------------------
@@ -40,43 +69,10 @@
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-   \doubleItem{Languages:}{Go (Golang), TypeScript/JavaScript (Node.js), Python, SQL}%
-   {}{}%
-    \\
-    \doubleItem{Databases \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Firestore, Kafka, RabbitMQ}%
-    {}{}%
-    \\
-    \doubleItem{Cloud \& DevOps:}{GCP, AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Prometheus, Grafana }%
-    {}{}%
+    \skillItem{Languages:}{Go (Golang), TypeScript/JavaScript (Node.js), Python, SQL}
+    \skillItem{Databases \& Messaging:}{PostgreSQL, MongoDB, Elasticsearch, Redis, Firestore, BigQuery, Kafka, RabbitMQ}
+    \skillItem{Cloud \& DevOps:}{GCP, AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Prometheus, Grafana}
 \end{skillList}
-\sectionsep
-
-%--------------------------------------------------------------
-%     Experience
-%--------------------------------------------------------------
-\section{Work Experience}
-\resumeHeading{Zobaze Technologies}{Backend Developer}{Hyderabad, India}{Jun 2025 - Aug 2026}
-\begin{bullets}
-    \item Sole owner of the backend and GCP cloud infrastructure for a product serving 2M users, reporting directly to the CEO and setting technical direction across the stack.
-    \item Improved stock accuracy from 85\% to 99\% across 1.5M businesses by redesigning the offline inventory system as an append-only transaction ledger, eliminating sync conflicts and retiring the reconciliation service.
-    \item Rebuilt subscription activation as a server-authoritative flow driven by payment-provider webhooks in Node.js, resolving activation failures and duplicate-subscription conflicts that affected 15\% of paid accounts.
-    \item  Built a Firestore-to-BigQuery archival pipeline in Golang for 700M+ sales and activity records, tiering data older than 3 months and reducing Firestore costs by \textasciitilde 20\%.
-    \item Developed an in-house push-notification and engagement platform in Golang processing 100K events/day across 1.5M businesses, replacing NudgeNow and removing recurring vendor licensing costs.
-    \item Led a GCP security overhaul across 13 projects: eliminated all long-lived service-account keys via keyless auth, restricted every API key to app-only usage, and shut down unauthenticated legacy services.
-    \item Built a Claude Code plugin that persists tasks, meetings, decisions, research, and blockers as a searchable knowledge base --- now the default daily workflow for the entire 12-person company.
-    
-\end{bullets}
-\sectionsep
-
-\resumeHeading{Vumonic Datalabs}{Software Engineer}{Bengaluru, India}{Jun 2021 - May 2025}
-\begin{bullets}
-    \item Built a real-time email ingestion system in Golang maintaining 1M concurrent IMAP IDLE connections (\textasciitilde 30K per node), reducing new-mail fetch latency from 8 hours to under 1 minute.
-    \item Productized the company's email dataset as Inboox.ai, a live SaaS for email marketers: built REST APIs, ingestion pipelines, search over 1.5M+ emails from 10K+ brands, and subscription management using Golang and Node.js.
-    \item Rewrote Node.js services in Golang, improving throughput by 40\% through concurrent processing and eliminating a class of runtime type errors with typed contracts.
-    \item Led a zero-downtime migration of 80 TB of storage, 30 Kubernetes services, and 5 databases from AWS to GCP through phased cutovers.
-    \item Migrated managed MongoDB and Elasticsearch (8B+ records, 3M users) from Atlas and Elastic Cloud to self-hosted deployments with automated backups, cutting database costs by \textasciitilde 70\%.
-    \item Automated Docker builds and Kubernetes deployments with GitHub Actions across 30+ microservices, replacing fully manual releases with push-to-deploy pipelines.
-\end{bullets}
 \sectionsep
 
 %--------------------------------------------------------------
@@ -84,7 +80,6 @@
 %--------------------------------------------------------------
 \section{Education}
 % Put school first and degree second if your school is reputable
-\educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Trichy, India}{Jun 2018 - May 2021}
-\sectionsep
+\educationHeading{B.Sc. Computer Science}{Bishop Heber College}{Trichy, India}{2018 -- 2021}
 
 \end{document}
